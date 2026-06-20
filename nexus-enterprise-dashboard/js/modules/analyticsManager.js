@@ -137,6 +137,164 @@ class AnalyticsManager {
     ctx.fillText(String(total), center, center + 14);
   }
 
+  createLineChart(containerId, data, options = {}) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const canvas = document.createElement('canvas');
+    container.innerHTML = '';
+    container.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    const width = container.clientWidth;
+    const height = container.clientHeight || 300;
+
+    canvas.width = width * 2;
+    canvas.height = height * 2;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.scale(2, 2);
+
+    this.#drawLineChart(ctx, data, width, height, options);
+
+    const chartId = Date.now() + Math.random();
+    this.#chartInstances.set(chartId, { canvas, data, options });
+    return chartId;
+  }
+
+  #drawLineChart(ctx, data, width, height, options) {
+    const padding = { top: 30, right: 35, bottom: 50, left: 50 };
+    const chartWidth = width - padding.left - padding.right;
+    const chartHeight = height - padding.top - padding.bottom;
+    const maxValue = Math.max(...data.map(d => d.value), 1);
+    const minValue = Math.min(...data.map(d => d.value), 0);
+    const range = maxValue - minValue || 1;
+
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i <= 4; i++) {
+      const ratio = i / 4;
+      const y = padding.top + chartHeight - ratio * chartHeight;
+      ctx.beginPath();
+      ctx.moveTo(padding.left, y);
+      ctx.lineTo(width - padding.right, y);
+      ctx.strokeStyle = 'rgba(200, 200, 200, 0.3)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      const val = Math.round(minValue + ratio * range);
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-muted') || '#6C757D';
+      ctx.font = '12px Inter, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(String(val), padding.left - 10, y + 4);
+    }
+
+    const points = [];
+    const stepX = chartWidth / (data.length - 1 || 1);
+
+    data.forEach((item, index) => {
+      const x = padding.left + index * stepX;
+      const y = padding.top + chartHeight - ((item.value - minValue) / range) * chartHeight;
+      points.push({ x, y, label: item.label, value: item.value });
+    });
+
+    const color = options.color || '#6C63FF';
+    if (options.fill) {
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, padding.top + chartHeight);
+      points.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.lineTo(points[points.length - 1].x, padding.top + chartHeight);
+      ctx.closePath();
+      const areaGradient = ctx.createLinearGradient(0, padding.top, 0, padding.top + chartHeight);
+      areaGradient.addColorStop(0, color + '40');
+      areaGradient.addColorStop(1, color + '00');
+      ctx.fillStyle = areaGradient;
+      ctx.fill();
+    }
+
+    ctx.beginPath();
+    points.forEach((p, idx) => {
+      if (idx === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    });
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    points.forEach((p, idx) => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--card-bg') || '#ffffff';
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#495057';
+      ctx.font = '12px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(p.label, p.x, padding.top + chartHeight + 20);
+
+      ctx.font = '11px Inter, sans-serif';
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-primary') || '#212529';
+      ctx.fillText(String(p.value), p.x, p.y - 12);
+    });
+  }
+
+  createGaugeChart(containerId, value, options = {}) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const canvas = document.createElement('canvas');
+    container.innerHTML = '';
+    container.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    const size = Math.min(container.clientWidth, 220);
+    const center = size / 2;
+    const radius = size / 2 - 25;
+
+    canvas.width = size * 2;
+    canvas.height = size * 2;
+    canvas.style.width = size + 'px';
+    canvas.style.height = size + 'px';
+    ctx.scale(2, 2);
+
+    ctx.clearRect(0, 0, size, size);
+
+    ctx.beginPath();
+    ctx.arc(center, center + 10, radius, 0.8 * Math.PI, 2.2 * Math.PI);
+    ctx.strokeStyle = 'rgba(200, 200, 200, 0.2)';
+    ctx.lineWidth = 14;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    const startAngle = 0.8 * Math.PI;
+    const endAngle = startAngle + (value / 100) * 1.4 * Math.PI;
+    const color = options.color || '#6C63FF';
+
+    const gradient = ctx.createLinearGradient(0, center - radius, size, center + radius);
+    gradient.addColorStop(0, color);
+    gradient.addColorStop(1, '#00D4FF');
+
+    ctx.beginPath();
+    ctx.arc(center, center + 10, radius, startAngle, endAngle);
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 14;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-primary') || '#212529';
+    ctx.font = 'bold 24px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(`${value.toFixed(1)}%`, center, center + 5);
+
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-muted') || '#6C757D';
+    ctx.fillText(options.label || 'Score', center, center + 25);
+  }
+
   trackEvent(name, data = {}) {
     if (window.gtag) window.gtag('event', name, data);
     console.log(`[Analytics] ${name}`, data);

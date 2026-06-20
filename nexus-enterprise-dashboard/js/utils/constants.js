@@ -6,6 +6,7 @@ export const ROUTES = {
   NEWS: '/news',
   GITHUB: '/github',
   KANBAN: '/kanban',
+  EVALUATION: '/evaluation',
   SETTINGS: '/settings'
 };
 
@@ -29,6 +30,7 @@ export const SEARCH_INDEX = [
   { title: 'News Center', path: '/news', icon: 'fa-newspaper', keywords: ['articles', 'headlines', 'feed'] },
   { title: 'GitHub Explorer', path: '/github', icon: 'fa-github', keywords: ['repos', 'code', 'developer'] },
   { title: 'Kanban Board', path: '/kanban', icon: 'fa-tasks', keywords: ['tasks', 'project', 'board'] },
+  { title: 'Evaluation Center', path: '/evaluation', icon: 'fa-chart-line', keywords: ['performance', 'analytics', 'kpi', 'reports', 'insights'] },
   { title: 'Settings', path: '/settings', icon: 'fa-cog', keywords: ['preferences', 'theme', 'language'] }
 ];
 
