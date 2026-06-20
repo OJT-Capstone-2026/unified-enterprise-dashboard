@@ -1,44 +1,19 @@
 export const questions = [
-  {
-    question: 'What does SPA stand for in web development?',
-    options: ['Single Page Application', 'Secure Protocol Access', 'System Performance Analyzer', 'Static Page Archive'],
-    correct: 0
-  },
-  {
-    question: 'Which CSS property enables glassmorphism effects?',
-    options: ['opacity', 'backdrop-filter', 'z-index', 'transform'],
-    correct: 1
-  },
-  {
-    question: 'What is the purpose of a Service Worker in PWAs?',
-    options: ['Database management', 'Offline caching and network proxy', 'DOM manipulation', 'CSS preprocessing'],
-    correct: 1
-  },
-  {
-    question: 'Which JavaScript feature provides reactive state management?',
-    options: ['Callbacks', 'Proxy objects', 'Regular expressions', 'Template literals'],
-    correct: 1
-  },
-  {
-    question: 'What does WCAG stand for?',
-    options: ['Web Content Accessibility Guidelines', 'Web Component API Gateway', 'Wireless Communication Access Group', 'Web Cache Aggregation Gateway'],
-    correct: 0
-  },
-  {
-    question: 'Which HTTP method is idempotent?',
-    options: ['POST', 'PATCH', 'PUT', 'CONNECT'],
-    correct: 2
-  },
-  {
-    question: 'What is the recommended approach for client-side routing?',
-    options: ['Full page reloads', 'History API with pushState', 'Iframe navigation', 'Cookie-based routing'],
-    correct: 1
-  },
-  {
-    question: 'Which design principle emphasizes 8px spacing grids?',
-    options: ['Brutalism', '8-Point Grid System', 'Skeuomorphism', 'Flat Design 1.0'],
-    correct: 1
-  }
+  { question: "Which HTML tag is used to create a hyperlink?", options: ["<link>", "<a>", "<href>", "<url>"], correct: 1 },
+  { question: "Which CSS property changes the text color?", options: ["background-color", "font-size", "color", "text-style"], correct: 2 },
+  { question: "Which symbol is used for single-line comments in JavaScript?", options: ["<!-- -->", "/* */", "//", "#"], correct: 2 },
+  { question: "Which data type is used to store true or false values in JavaScript?", options: ["String", "Boolean", "Number", "Array"], correct: 1 },
+  { question: "Which function displays a message box with an OK button?", options: ["prompt()", "confirm()", "alert()", "log()"], correct: 2 },
+  { question: "Which operator is used for strict equality comparison?", options: ["==", "=", "===", "!="], correct: 2 },
+  { question: "Which loop is guaranteed to execute at least once?", options: ["for", "while", "do...while", "foreach"], correct: 2 },
+  { question: "What does DOM stand for?", options: ["Document Object Model", "Data Object Management", "Document Oriented Method", "Digital Object Model"], correct: 0 },
+  { question: "Which method adds an element to the end of an array?", options: ["push()", "pop()", "shift()", "slice()"], correct: 0 },
+  { question: "Which keyword is used to declare a constant variable?", options: ["let", "var", "const", "static"], correct: 2 },
+  { question: "Which method converts a JSON string into a JavaScript object?", options: ["JSON.parse()", "JSON.stringify()", "JSON.convert()", "JSON.object()"], correct: 0 },
+  { question: "Which company developed JavaScript?", options: ["Microsoft", "Google", "Netscape", "Apple"], correct: 2 },
+  { question: "Which CSS property is used to make text bold?", options: ["font-style", "font-weight", "text-transform", "font-size"], correct: 1 },
+  { question: "Which HTML element is used to insert an image?", options: ["<image>", "<img>", "<picture>", "<src>"], correct: 1 },
+  { question: "Which method removes the last element from an array?", options: ["push()", "shift()", "splice()", "pop()"], correct: 3 }
 ];
 
 export default questions;
