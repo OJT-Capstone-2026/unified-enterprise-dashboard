@@ -18,6 +18,8 @@ import News from './apps/news/news.js';
 import GitHub from './apps/github/github.js';
 import Kanban from './apps/kanban/kanban.js';
 import Settings from './apps/settings/settings.js';
+import Evaluation from './apps/evaluation/evaluation.js';
+
 
 class App {
   constructor() {
@@ -42,7 +44,8 @@ class App {
       news: News,
       github: GitHub,
       kanban: Kanban,
-      settings: Settings
+      settings: Settings,
+      evaluation: Evaluation
     };
   }
 
@@ -93,6 +96,7 @@ class App {
       .addRoute('/news', this.#wrapRoute(News), { title: 'News Center' })
       .addRoute('/github', this.#wrapRoute(GitHub), { title: 'GitHub Explorer' })
       .addRoute('/kanban', this.#wrapRoute(Kanban), { title: 'Kanban Board' })
+      .addRoute('/evaluation', this.#wrapRoute(Evaluation), { title: 'Evaluation Center' })
       .addRoute('/settings', this.#wrapRoute(Settings), { title: 'Settings' })
       .addRoute('/404', () => this.#render404(), { title: '404' });
 

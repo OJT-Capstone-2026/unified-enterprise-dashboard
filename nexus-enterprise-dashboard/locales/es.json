@@ -8,7 +8,8 @@
     "news": "Centro de Noticias",
     "github": "Explorador GitHub",
     "kanban": "Tablero Kanban",
-    "settings": "Configuración"
+    "settings": "Configuración",
+    "evaluation": "Centro de Evaluación"
   },
   "search": { "placeholder": "Buscar en Nexus..." },
   "dashboard": {
@@ -18,6 +19,10 @@
     "users": "Usuarios Activos",
     "projects": "Proyectos",
     "tasks": "Tareas Completadas"
+  },
+  "evaluation": {
+    "title": "Centro de Evaluación y Análisis",
+    "subtitle": "Métricas empresariales en tiempo real, índice de productividad del equipo y evaluación de riesgos estratégicos."
   },
   "common": {
     "save": "Guardar",
