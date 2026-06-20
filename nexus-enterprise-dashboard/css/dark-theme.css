@@ -1,0 +1,21 @@
+[data-theme="dark"] {
+  --bg-primary: #0f1117;
+  --bg-secondary: #1a1d27;
+  --bg-tertiary: #252836;
+  --text-primary: #f0f2f5;
+  --text-secondary: #b0b5c0;
+  --text-muted: #7a8194;
+  --border-color: #2e3345;
+  --sidebar-bg: rgba(26, 29, 39, 0.9);
+  --card-bg: rgba(37, 40, 54, 0.85);
+  --input-bg: #252836;
+  --glass-background: rgba(0, 0, 0, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --neutral-100: #1a1d27;
+  --neutral-200: #0f1117;
+}
+
+[data-theme="dark"] .neumorphic {
+  background: #2d2d2d;
+  box-shadow: 20px 20px 60px #1a1a1a, -20px -20px 60px #404040;
+}

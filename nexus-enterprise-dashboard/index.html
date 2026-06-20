@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nexus Enterprise Dashboard unifies portfolio management, knowledge assessment, financial tracking, live news, GitHub analytics, and workflow management in one seamless platform.">
+  <meta name="keywords" content="enterprise dashboard, productivity platform, project management, expense tracker, github analytics, kanban board, quiz system, news aggregator">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6C63FF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>Nexus Enterprise Dashboard - Enterprise Productivity Platform</title>
+
+  <meta property="og:title" content="Nexus Enterprise Dashboard">
+  <meta property="og:description" content="The Ultimate Enterprise Productivity Platform">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexus-dashboard.com">
+  <meta property="og:image" content="https://nexus-dashboard.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nexus Enterprise Dashboard">
+  <meta name="twitter:description" content="The Ultimate Enterprise Productivity Platform">
+  <meta name="twitter:image" content="https://nexus-dashboard.com/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="./assets/svg/favicon.svg">
+  <link rel="manifest" href="./manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/light-theme.css">
+  <link rel="stylesheet" href="./css/dark-theme.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Nexus Enterprise Dashboard",
+    "description": "A unified enterprise productivity platform integrating multiple business applications.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires modern web browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <div id="loader" class="page-loader active">
+    <div class="loader-content">
+      <div class="loader-logo"><i class="fas fa-cube"></i></div>
+      <div class="loader-spinner"></div>
+      <p data-i18n="loader.text">Loading Nexus Enterprise Dashboard...</p>
+    </div>
+  </div>
+
+  <div id="app" class="app-container">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <i class="fas fa-cube"></i>
+          <span class="brand-text">Nexus</span>
+        </div>
+        <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/" data-router class="active"><i class="fas fa-th-large"></i><span data-i18n="nav.dashboard">Dashboard</span></a></li>
+          <li><a href="/portfolio" data-router><i class="fas fa-users"></i><span data-i18n="nav.portfolio">Portfolio</span></a></li>
+          <li><a href="/quiz" data-router><i class="fas fa-brain"></i><span data-i18n="nav.quiz">Quiz System</span></a></li>
+          <li><a href="/expense" data-router><i class="fas fa-wallet"></i><span data-i18n="nav.expense">Expense Tracker</span></a></li>
+          <li><a href="/news" data-router><i class="fas fa-newspaper"></i><span data-i18n="nav.news">News Center</span></a></li>
+          <li><a href="/github" data-router><i class="fab fa-github"></i><span data-i18n="nav.github">GitHub Explorer</span></a></li>
+          <li><a href="/kanban" data-router><i class="fas fa-tasks"></i><span data-i18n="nav.kanban">Kanban Board</span></a></li>
+          <li><a href="/settings" data-router><i class="fas fa-cog"></i><span data-i18n="nav.settings">Settings</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="user-profile">
+          <div class="avatar avatar-placeholder" aria-hidden="true">A</div>
+          <span class="username">Admin</span>
+        </div>
+      </div>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <header class="top-bar">
+        <div class="search-bar">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" placeholder="Search Nexus..." id="global-search" data-i18n-placeholder="search.placeholder" aria-label="Global search">
+          <kbd>⌘K</kbd>
+        </div>
+        <div class="top-bar-actions">
+          <button class="notification-btn" id="notification-btn" aria-label="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </button>
+          <button class="theme-toggle-mobile" id="theme-toggle-mobile" aria-label="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <div id="page-content" class="page-content morphing-bg"></div>
+
+      <footer class="app-footer">
+        <p>&copy; 2024 Nexus Enterprise Dashboard. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Support</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="notification-container"></div>
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+
+  <script type="module">
+    import App from './js/app.js';
+    const app = new App();
+    app.initialize();
+  </script>
+</body>
+</html>

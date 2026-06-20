@@ -1,0 +1,20 @@
+{
+  "name": "Nexus Enterprise Dashboard",
+  "short_name": "Nexus",
+  "description": "The Ultimate Enterprise Productivity Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6C63FF",
+  "theme_color": "#6C63FF",
+  "orientation": "any",
+  "icons": [
+    { "src": "/assets/svg/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "categories": ["business", "productivity", "enterprise"],
+  "shortcuts": [
+    { "name": "Dashboard", "url": "/", "description": "Go to Dashboard" },
+    { "name": "Expense Tracker", "url": "/expense", "description": "Manage expenses" },
+    { "name": "Kanban Board", "url": "/kanban", "description": "Manage tasks" }
+  ],
+  "prefer_related_applications": false
+}

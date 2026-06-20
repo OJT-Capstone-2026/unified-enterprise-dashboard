@@ -1,0 +1,30 @@
+{
+  "loader": { "text": "Loading Nexus Enterprise Dashboard..." },
+  "nav": {
+    "dashboard": "Dashboard",
+    "portfolio": "Portfolio",
+    "quiz": "Quiz System",
+    "expense": "Expense Tracker",
+    "news": "News Center",
+    "github": "GitHub Explorer",
+    "kanban": "Kanban Board",
+    "settings": "Settings"
+  },
+  "search": { "placeholder": "Search Nexus..." },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Welcome back! Here's your enterprise overview.",
+    "revenue": "Total Revenue",
+    "users": "Active Users",
+    "projects": "Projects",
+    "tasks": "Tasks Completed"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "loading": "Loading..."
+  }
+}

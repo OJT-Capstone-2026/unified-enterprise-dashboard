@@ -1,0 +1,24 @@
+{
+  "name": "nexus-enterprise-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The Ultimate Enterprise Productivity Platform - A premium vanilla JavaScript SPA",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx serve . -p 3000",
+    "test": "node tests/unit/run.js"
+  },
+  "keywords": [
+    "enterprise",
+    "dashboard",
+    "spa",
+    "vanilla-javascript",
+    "pwa"
+  ],
+  "author": "Nexus Enterprises",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

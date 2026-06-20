@@ -1,0 +1,2 @@
+.dashboard-widget { transition: transform var(--transition-spring); }
+.dashboard-widget:hover { transform: translateY(-2px); }

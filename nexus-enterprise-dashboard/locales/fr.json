@@ -1,0 +1,30 @@
+{
+  "loader": { "text": "Chargement du Nexus Enterprise Dashboard..." },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "portfolio": "Portfolio",
+    "quiz": "Système de Quiz",
+    "expense": "Suivi des dépenses",
+    "news": "Centre d'actualités",
+    "github": "Explorateur GitHub",
+    "kanban": "Tableau Kanban",
+    "settings": "Paramètres"
+  },
+  "search": { "placeholder": "Rechercher dans Nexus..." },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Bienvenue ! Voici votre aperçu d'entreprise.",
+    "revenue": "Revenu total",
+    "users": "Utilisateurs actifs",
+    "projects": "Projets",
+    "tasks": "Tâches terminées"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "loading": "Chargement..."
+  }
+}
